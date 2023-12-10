@@ -10,18 +10,18 @@ from spotify_v1 import loadData
 def getBasicVisuals():
 	df = loadData(True)
 	# Streams vs number of artists 
-	fig = plt.figure(figsize=(5,5))
+	fig = plt.figure(figsize=(5,5),layout="constrained")
 	plt.scatter(df['artist_count'],df['streams'],marker='.')
 	plt.title('Number of artists on a song vs Stream count')
 	plt.xlabel('Number of artists')
 	plt.ylabel('Stream count [in millions]')
 
 	# box plots
-	plt.figure(figsize=(12,8))
+	plt.figure(figsize=(20,10),layout="constrained")
 	df.boxplot()
 
 	# histograms
-	fig = plt.figure(figsize = (15,10))
+	fig = plt.figure(figsize = (15,10),layout="constrained")
 	ax = fig.gca()
 	df.hist(ax = ax)
 
